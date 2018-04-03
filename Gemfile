@@ -5,7 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+# rails 5버전에서 devise를 사용할 수 있지만 해당 버전이 아직 정식으로 나오지 않았기 때문에
+#git주소를 적어 최신 코드를 받아온다.
+gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record
