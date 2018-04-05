@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts
+
+  def admin?(post)
+    self == post.user #slef : Admin? 메소드를 호출한 현재 User 자신
+  end
 end
