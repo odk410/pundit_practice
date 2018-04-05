@@ -19,8 +19,8 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @edit_post = Post.find(params[:id])
-    authorize @edit_post,:update?
+    edit_post = Post.find(params[:id])
+    authorize edit_post,:update?
   end
 
   # POST /posts
@@ -59,6 +59,8 @@ class PostsController < ApplicationController
 
     destroy_post = Post.find(params[:id])
     authorize destroy_post, :update?
+    @post.destroy!
+    redirect_to @post
 
     @post.destroy
     respond_to do |format|
@@ -66,6 +68,13 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # def publish
+  #   @post = Post.find(params[:id])
+  #   authorize @post, :update?
+  #   @post.publish!
+  #   redirect_to @post
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

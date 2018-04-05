@@ -1,15 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to '회원가입', new_user_registration_path %>
 
-<% if !user_signed_in? %>
-  <%= link_to '로그인', new_user_session_path%>
-
-<% else %>
-  <%= link_to '로그아웃', destroy_user_session_path, method: :delete%>
-  <br><br>
-  <%= current_user.email %>
-<% end %>
 
 <h1>Posts</h1>
 
