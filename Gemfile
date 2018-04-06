@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
+gem 'rails_admin', '~> 1.3'
 #권한 설정 gem
 gem 'pundit'
 # rails 5버전에서 devise를 사용할 수 있지만 해당 버전이 아직 정식으로 나오지 않았기 때문에

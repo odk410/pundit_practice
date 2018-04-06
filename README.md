@@ -54,3 +54,11 @@
       user.admin?(@post)
     end
   ```
+  
+ 7. admin 권한 추가
+
+  1. Gemfile 추가: `gem 'rails_admin', '~> 1.3'`
+  2. `bundle install`
+  3. `rails g rails_admin:install`
+  4. 경로를 묻는다 디폴트 사용하려면 Enter
+  5. 서버 시작하기 `rails s` Admin 화면을 보려면 `/admin`로 가기 (만약 디폴트로 경로를 설정 했다면 /admin)
